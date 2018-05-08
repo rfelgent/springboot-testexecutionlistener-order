@@ -4,7 +4,7 @@ Project for demonstrating a bug considering the orders of custom TestExectionLis
 Prerequisites
 ===
 
-- install FireFox > version 48 (Selenium driver is installed automatically by Gradle plugin!)
+- install FireFox bin > version 48 (driver for the browser is installed automatically by Gradle plugin!)
 - install Java 8
 
 Getting started

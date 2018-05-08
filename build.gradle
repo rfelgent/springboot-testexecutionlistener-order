@@ -1,0 +1,47 @@
+buildscript {
+    ext['selenium.version'] = '3.9.1'
+
+
+}
+
+plugins {
+    id "io.spring.dependency-management" version "1.0.5.RELEASE"
+    id "com.energizedwork.webdriver-binaries" version "1.4"
+}
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.boot:spring-boot-dependencies:1.5.10.RELEASE'
+    }
+}
+
+test {
+    //this switches off logging within geckodriver!
+    systemProperties["webdriver.firefox.logfile"] = "/dev/null"
+}
+build {
+    version             = "0.1"
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+webdriverBinaries {
+    geckodriver '0.20.1'
+}
+
+dependencies {
+    /////////
+    //every dependency that does not have a specified version is taken from Spring Boot's BOM!
+    /////////
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-logging'
+    testCompile 'org.seleniumhq.selenium:selenium-firefox-driver'
+    testCompile 'org.seleniumhq.selenium:selenium-support:2.52.0'           //unfortunately not part of Spring Boot's  BOM
+}

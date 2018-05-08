@@ -18,6 +18,6 @@ There you will find log statements reflecting the order execution of the test ex
 
 DO NOT pay attention to the failed "test". I just want to demonstrate the problem when taking Screenshots in case of test failures! 
 
-Original ISSUE in Spring-Boot
+Original issue in Spring-Boot
 ===
 https://github.com/spring-projects/spring-boot/issues/13107
